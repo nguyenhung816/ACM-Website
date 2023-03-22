@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!--Login Form-->
+    <form action="#">
+        <div class="container">
+            <!--
+                Log in container is the parent of Log in Content and is used to center the login-content
+                whith flex box
+            -->
+            <div class="login-container">
+                <!--Log in content contains all the inputs, links and button-->
+                <div class="login-content">
+                    <!--username input-->
+                    <div class="username">
+                        <label for="username">X</label>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <!--password input-->
+                    <div class="pwd">
+                        <label for="psw">O</label>   
+                        <input type="text" placeholder="Password">
+                    </div>
+                    <!--Link to the Sign up page if user does not have an account-->
+                    <p class="no-acc">Don't Have an Accout? <a href="#signup"> Sign Up</a></p>
+                    <!--
+                        This div suronds the Login button so that we can center it using flex
+                        box in css
+                    -->
+                    <div class="login-btn-cont">
+                        <div>
+                            <!--Login Button-->
+                            <button>Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
