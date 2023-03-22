@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Mono', monospace;
+}
+body{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.main-session{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    display: flex;
+}
+
+.signup-form{
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+
+.started-quote{
+    border-radius: 5px;
+    border-style: solid;
+    background-color: yellow;
+    text-align: center;
+    height: 41px;
+}
+
