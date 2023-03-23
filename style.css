@@ -1,15 +1,35 @@
+/*Display grid was used to center the form in the center of the screen*/
 body{
-    background: linear-gradient(90deg, #fdcd3b 60%, #747474 60%);
+    /*This is for the grey-striped backgound*/
+
+    background-image: linear-gradient(to left, #e2c049 5%, #747474 5%, #747474 5%, #747474 15%,#e2c049 15%, #e2c049 15%, #e2c049 16%,#747474 16%, #747474 16%, #747474, 17.5%,#e2c049 17.5%);
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
 }
 
 .container{
     height: 100%;
-    padding: 10%;
-    padding-top: 16rem;
     display: flex;
     justify-content: center;
 }
 
+div.top{
+    height: 100px;
+    width: 100%;
+}
+
+div.bottom{
+    height: 100px;
+    width: 100%;
+
+}
 
 
 
@@ -49,6 +69,7 @@ input{
     border: none;
     padding: 10px;
     width: 100%;
+    font-size: large;
 }
 
 
