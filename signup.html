@@ -15,29 +15,38 @@
     <div class="main-session">
         <form class="signup-form" action="#" method="post">
             <!--Let's get started quote-->
-            <div class="started-quote"><p>Let's get started</p></div>
+            <div class="started-quote">
+                <div class="text">
+                    <p class="quote-text">Let's get started</p>
+                </div>
+                
+              
+            </div>
             <!--Include all the user information that will be send back to the backend-->
             <div class="login-session">
-                <input type="text" id="firstName" placeholder="First name">
-                <input type="text" id="lastName" placeholder="Last name">
+                <input type="text" id="firstName" placeholder="First name" class="login-item">
+                <input type="text" id="lastName" placeholder="Last name" class="login-item">
                 <br>
-                <input type="text" id="email" placeholder="Email">
+                <input type="text" id="email" placeholder="Email" class="login-item">
                 <br>
-                <input type="text" id="password" placeholder="Password">
+                <input type="text" id="password" placeholder="Password" class="login-item">
             </div>
 
             <!--Submission button-->
-            <button type="submit" value="Sign-Up">
-                Sign-Up
-            </button>
-            <p><a href="/">Already have an Account?</a></p>
+            <div class="button-div">
+                <button type="submit" value="Sign-Up">
+                    Sign-Up
+                </button>
+            </div>
+            
+            <p class="loginDirectory"><a href="/">Already have an Account?</a></p>
             <!--Sponsors Logos !!Could be automatically generated later-->
             <div class="sponsor-logos">
-                <div class="ACM-logo">
-                    
+                <div  class="ACM-logo">
+                    <img class="ACM-img" src="ACM.png">
                 </div>
                 <div class="UHD-logo">
-
+                    <img class="UHD-img" src="UHD.png">
                 </div>
             </div>
         </form>

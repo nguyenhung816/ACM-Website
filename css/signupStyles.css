@@ -4,34 +4,139 @@
     font-family: 'DM Mono', monospace;
 }
 body{
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-content: center;
+    
     justify-content: center;
+    background-color: yellow;
+    align-content: center;
 }
 
 .main-session{
-    position: fixed;
+    background-color: whitesmoke;
+    margin: 0;
+    position: absolute;
     top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .signup-form{
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    border-radius: 5px;
+    border-style: groove;
+    border-color: grey;
+    
 }
 
 .started-quote{
-    border-radius: 5px;
-    border-style: solid;
-    background-color: yellow;
-    text-align: center;
+    
+    
     height: 41px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
 }
 
+.quote-text{
+    padding: 5px 5px 5px;
+    border-color: yellow;
+    background-color: yellow;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.started-quote > p{
+    margin-top: 10px;
+}
+
+.login-session{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    column-gap: 20px;
+    row-gap: 15px;
+    padding-top: 10px;
+    padding-bottom: -20px;
+
+}
+
+#firstName{
+    grid-column: 1;
+    
+}
+
+#lastName{
+    grid-column: 2;
+}
+
+#email{
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+#password{
+    grid-row: 3 ;
+    grid-column: 1/3;
+}
+
+.login-item{
+    height: 30px;
+    background-color:	#DCDCDC;
+}
+
+.loginDirectory{
+    text-align: center;
+}
+
+.button-div{
+    display: flex;
+    justify-content: center;
+    
+}
+
+button{
+    height:50px;
+    width: 100px;
+    background-color:	#DCDCDC;
+    margin-bottom: 10px;
+}
+
+.ACM-img{
+    width: 100px;
+    height: 100px;
+}
+
+.UHD-img{
+    width: 130px;
+    height: 50px;
+}
+
+.sponsor-logos{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ACM-logo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.UHD-logo{
+    display: flex;
+    align-items: center;
+}
