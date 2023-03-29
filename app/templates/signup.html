@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/signupStyles.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/signupStyles.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
     <script
     src="https://code.jquery.com/jquery-3.6.4.min.js"
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
     crossorigin="anonymous"></script>
-    <title>Document</title>
 </head>
 <body>
     <!--Big session that include all the information-->
@@ -28,32 +28,31 @@
             </div>
             <!--Include all the user information that will be send back to the backend-->
             <div class="login-session">
-                <input type="text" id="firstName" placeholder="First name" class="login-item">
-                <input type="text" id="lastName" placeholder="Last name" class="login-item">
+                {{ form.first_name }}
+                {{ form.last_name}}
                 <br>
-                <input type="text" id="email" placeholder="Email" class="login-item">
+                {{ form.email}}
                 <br>
-                <input type="text" id="password" placeholder="Password" class="login-item">
+                {{ form.password}}
             </div>
 
             <!--Submission button-->
-            <div class="button-div">
-                <input class="button" type="submit" value="Sign-Up">
-            </input>
+            <div method="post" class="button-div">
+                {{ form.submit }}
             </div>
             
             <p class="loginDirectory"><a href="/">Already have an Account?</a></p>
             <!--Sponsors Logos !!Could be automatically generated later-->
             <div class="sponsor-logos">
                 <div  class="ACM-logo">
-                    <img class="ACM-img" src="ACM.png">
+                    <img class="ACM-img" src="{{url_for('static', filename= 'ACM.png')}}">
                 </div>
                 <div class="UHD-logo">
-                    <img class="UHD-img" src="UHD.png">
+                    <img class="UHD-img" src="{{url_for('static', filename= 'UHD.png')}}">
                 </div>
             </div>
         </form>
-        <script src="scripts/signup.js"></script>
+        <script src="{{url_for('static', filename='scripts/signup.js')}}"></script>
     </div>
 </body>
 </html>
