@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, flash, redirect, url_for, jsonify, Response, json
 from app.forms import SignupForm, LoginForm
-
+import random
 from app import db
 from app.models import  UserPassword, UserAccount
 
@@ -22,7 +22,8 @@ def signup():
         new_user = UserAccount(
             first_name=form.first_name.data,
             last_name=form.last_name.data,
-            email=form.email.data
+            email=form.email.data,
+            member_number = random.randrange(1000000, 9999999)
         )
         # add the user to the database
         db.session.add(new_user)
@@ -32,7 +33,7 @@ def signup():
         new_password = UserPassword(
             email=form.email.data,
             password=form.password.data,
-            user_account_id=new_user.id
+            user_account_id=new_user.member_number
         )
         db.session.add(new_password)
         db.session.commit()
