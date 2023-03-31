@@ -34,7 +34,8 @@
                 {{ form.first_name }}
                 {{ form.last_name}}
                 <br>
-                {{ form.email}}
+                {{ form.email}}    
+                {{ form.email.errors[0] }} <!--Front end will work on this-->
                 <br>
                 {{ form.password}}
             </div>
