@@ -7,7 +7,7 @@ A web application for ACM using Flask.
 2. Activate the virtual environment:
     - On Windows: `venv\Scripts\activate`
     - On Unix or Linux: `source venv/bin/activate`
-3. Install the project dependencies: pip install -r requirements.txt
+3. Install the project dependencies: `pip install -r requirements.txt`
 
 ## Usage
 
