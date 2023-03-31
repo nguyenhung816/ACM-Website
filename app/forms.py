@@ -13,7 +13,7 @@ class SignupForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[DataRequired()], render_kw={"placeholder": "Email", "class": "login-item"})
+    email = StringField('Email', validators=[DataRequired()], render_kw={"placeholder": "Login Email", "class": "login-item"})
     password = PasswordField('Password', validators=[DataRequired()], render_kw={"placeholder": "Password", "class": "login-item"})
     submit = SubmitField('Log in')
 
