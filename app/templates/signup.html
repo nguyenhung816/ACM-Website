@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,26 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/signupStyles.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Rubik:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <title>Document</title>
-    <script
-    src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!--Big session that include all the information-->
     <div class="main-session">
-        <form class="signup-form"  action="">
+        <form class="signup-form" method="POST" action="/signup">
+            {{ form.hidden_tag() }}
             <!--Let's get started quote-->
             <div class="started-quote">
                 <div class="text">
                     <p class="quote-text">Let's get started</p>
                 </div>
-                
-              
+
+
             </div>
             <!--Include all the user information that will be send back to the backend-->
             <div class="login-session">
@@ -37,14 +40,14 @@
             </div>
 
             <!--Submission button-->
-            <div method="post" class="button-div">
+            <div class="button-div" method="POST" action="{{ url_for('index') }}">
                 {{ form.submit }}
             </div>
-            
+
             <p class="loginDirectory"><a href="/">Already have an Account?</a></p>
             <!--Sponsors Logos !!Could be automatically generated later-->
             <div class="sponsor-logos">
-                <div  class="ACM-logo">
+                <div class="ACM-logo">
                     <img class="ACM-img" src="{{url_for('static', filename= 'ACM.png')}}">
                 </div>
                 <div class="UHD-logo">
@@ -55,4 +58,5 @@
         <script src="{{url_for('static', filename='scripts/signup.js')}}"></script>
     </div>
 </body>
+
 </html>
