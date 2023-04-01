@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for, jsonify, Response, 
 from app.forms import SignupForm, EmailError
 import random
 from app import db
-from app.models import  UserPassword, UserAccount
+from app.models import  UserPassword, UserAccount, Staff
 import jwt
 from .database import db
 from datetime import datetime
@@ -31,7 +31,7 @@ def token_required(f):
 
     return Token_check
 #Put this under login routen need a secret key
-token = jwt.encode({'email' : UserAccount.email, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(minutes=180)}, app.config['SECRET_KEY'])
+#token = jwt.encode({'email' : UserAccount.email, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(minutes=180)}, app.config['SECRET_KEY'])
 
 with app.app_context():
     db.create_all()
@@ -40,6 +40,11 @@ with app.app_context():
 @app.route('/index')
 def index():
     return render_template('index.html')
+
+@app.route('/staff')
+def staff():
+    staff_members = Staff.query.limit(3).all()
+    return render_template('staff.html', staff_members=staff_members)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
