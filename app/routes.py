@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, flash
+from flask import render_template, flash, redirect, url_for
 from app.forms import SignupForm, EmailError
 import random
 from app import db
@@ -45,8 +45,8 @@ def signup():
 
         # flash a success message and redirect to index page
         flash('You have successfully signed up!')
-        return render_template('homepage.html', form=form)
-     
+        #return render_template('homepage.html', form=form) #images do not load with this?
+        return redirect(url_for('homepage'))
     # if the email is already in the database, flash an error message
     elif form.email.errors == [EmailError.EMAIL_IN_DB.value]:
         flash(EmailError.EMAIL_IN_DB.value)
