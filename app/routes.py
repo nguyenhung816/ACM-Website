@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, flash, redirect, url_for, jsonify, Response, json
-from app.forms import SignupForm, LoginForm
+from app.forms import SignupForm, EmailError
 import random
 from app import db
 from app.models import  UserPassword, UserAccount
@@ -38,11 +38,23 @@ def signup():
         db.session.add(new_password)
         db.session.commit()
 
-
         # flash a success message and redirect to index page
         flash('You have successfully signed up!')
         return render_template('index.html', form=form)
-    else:
+     
+    # if the email is already in the database, flash an error message
+    elif form.email.errors == [EmailError.EMAIL_IN_DB.value]:
+        flash(EmailError.EMAIL_IN_DB.value)
+        return render_template('signup.html', form=form)
+    
+    # if the email is not a gator email, flash an error message
+    elif form.email.errors == [EmailError.INVALID_EMAIL_DOMAIN.value]:
+        flash(EmailError.INVALID_EMAIL_DOMAIN.value)
+        #clrear the email field
+        form.email.data = ''
+        return render_template('signup.html', form=form)
+    
+    else:  
         return render_template('signup.html', form=form)
 
 
