@@ -10,7 +10,8 @@ with app.app_context():
 
 @app.route('/')
 def homepage():
-    return render_template('homepage.html')
+    staff_members = Staff.query.limit(3).all()
+    return render_template('homepage.html', staff_members=staff_members)
 
 @app.route('/staff')
 def staff():
