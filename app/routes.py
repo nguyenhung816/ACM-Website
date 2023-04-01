@@ -3,7 +3,7 @@ from flask import render_template, flash
 from app.forms import SignupForm, EmailError
 import random
 from app import db
-from app.models import  UserPassword, UserAccount
+from app.models import  UserPassword, UserAccount, Staff
 
 with app.app_context():
     db.create_all()
@@ -11,6 +11,11 @@ with app.app_context():
 @app.route('/')
 def homepage():
     return render_template('homepage.html')
+
+@app.route('/staff')
+def staff():
+    staff_members = Staff.query.limit(3).all()
+    return render_template('staff.html', staff_members=staff_members)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
